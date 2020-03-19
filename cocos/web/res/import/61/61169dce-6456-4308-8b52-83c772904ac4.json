@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lhd_zoushi_bg6",
+    "texture": "b0PlE/Wm5EzoiKskf1ex2M",
+    "rect": [
+      0,
+      0,
+      37,
+      32
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      37,
+      32
+    ],
+    "capInsets": [
+      12,
+      11,
+      11,
+      12
+    ]
+  }
+}

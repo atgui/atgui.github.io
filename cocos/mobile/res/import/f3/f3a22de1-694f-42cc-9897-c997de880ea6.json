@@ -1,0 +1,90 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "DT_CZ_guang",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "RPaW6K5U+3ihgt58nfRSxFQB+68",
+      "spine": "3.6.53",
+      "width": 151,
+      "height": 131,
+      "images": "./images/"
+    },
+    "bones": [
+      {
+        "name": "root"
+      }
+    ],
+    "slots": [
+      {
+        "name": "zi_guang2",
+        "bone": "root",
+        "attachment": "zi_guang",
+        "blend": "additive"
+      }
+    ],
+    "skins": {
+      "default": {
+        "zi_guang2": {
+          "zi_guang": {
+            "x": 22.68,
+            "y": 74.03,
+            "width": 151,
+            "height": 131
+          }
+        }
+      }
+    },
+    "animations": {
+      "animation": {
+        "slots": {
+          "zi_guang2": {
+            "color": [
+              {
+                "time": 0,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.3333,
+                "color": "ffffff00"
+              },
+              {
+                "time": 1.5,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 1.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\nDT_CZ_guang.png\nsize: 256,256\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nzi_guang\n  rotate: false\n  xy: 2, 2\n  size: 151, 131\n  orig: 151, 131\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "f0YtCLchNA+I8d6BTzAQ4I"
+    }
+  ],
+  "textureNames": [
+    "DT_CZ_guang.png"
+  ]
+}

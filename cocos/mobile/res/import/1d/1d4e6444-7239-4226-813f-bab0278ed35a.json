@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lhd_Picture2",
+    "texture": "1aNsMHkdNBp49B9HmDT1za",
+    "rect": [
+      0,
+      0,
+      133,
+      133
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      133,
+      133
+    ],
+    "capInsets": [
+      52,
+      39,
+      48,
+      41
+    ]
+  }
+}

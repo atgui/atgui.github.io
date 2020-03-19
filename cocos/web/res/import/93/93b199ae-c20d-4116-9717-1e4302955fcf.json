@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DT_RRMJ",
+    "texture": "9cyLSukOVCKqDBV/t+4+sQ",
+    "rect": [
+      2,
+      3,
+      957,
+      504
+    ],
+    "offset": [
+      -31.5,
+      1
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

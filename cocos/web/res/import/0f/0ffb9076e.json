@@ -1,0 +1,78 @@
+[
+  {
+    "__type__": "cc.BitmapFont",
+    "_name": "blue_font-export",
+    "spriteFrame": {
+      "__uuid__": "bb7XikA9xG4JRVh2Nq5NuR"
+    },
+    "fontSize": 32,
+    "_fntConfig": {
+      "commonHeight": 80,
+      "fontSize": 32,
+      "atlasName": ".\\blue_font-export.png",
+      "fontDefDictionary": {
+        "9": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 160
+        },
+        "32": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 20
+        },
+        "33": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 125,
+            "height": 161
+          },
+          "xOffset": 0,
+          "yOffset": -81,
+          "xAdvance": 126
+        }
+      },
+      "kerningDict": {}
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "blue_font-export",
+      "texture": "37sIq+NABMDaahon0FeYtt",
+      "rect": [
+        0,
+        0,
+        125,
+        161
+      ],
+      "offset": [
+        -1.5,
+        47.5
+      ],
+      "originalSize": [
+        128,
+        256
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+]

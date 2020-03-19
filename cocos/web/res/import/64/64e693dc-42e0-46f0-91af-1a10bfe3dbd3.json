@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "LHD_xiazhu",
+    "texture": "43bmSyUbJGVKQJTifaSCgP",
+    "rect": [
+      2,
+      2,
+      879,
+      501
+    ],
+    "offset": [
+      -70.5,
+      3.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "LHD_xiazhu",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "hUfDsHMv5EtJ5BYvC4Mhvh7ZDFo",
+      "spine": "3.6.53",
+      "width": 882.39,
+      "height": 259.45,
+      "images": "./image/"
+    },
+    "bones": [
+      {
+        "name": "root"
+      },
+      {
+        "name": "di",
+        "parent": "root"
+      },
+      {
+        "name": "zi",
+        "parent": "root"
+      }
+    ],
+    "slots": [
+      {
+        "name": "lhd_room",
+        "bone": "di",
+        "attachment": "lhd_room"
+      },
+      {
+        "name": "lhd_kaishi",
+        "bone": "root"
+      },
+      {
+        "name": "xiazhu",
+        "bone": "zi",
+        "attachment": "xiazhu"
+      }
+    ],
+    "skins": {
+      "default": {
+        "lhd_room": {
+          "lhd_room": {
+            "width": 879,
+            "height": 243
+          }
+        }
+      },
+      "kaishixiazhu": {
+        "xiazhu": {
+          "xiazhu": {
+            "name": "lhd_kaishi",
+            "width": 492,
+            "height": 121
+          }
+        }
+      },
+      "tingzhixiazhu": {
+        "xiazhu": {
+          "xiazhu": {
+            "name": "lhd_tingzhi",
+            "width": 500,
+            "height": 133
+          }
+        }
+      }
+    },
+    "animations": {
+      "animation": {
+        "slots": {
+          "lhd_room": {
+            "color": [
+              {
+                "time": 0,
+                "color": "ffffff00"
+              },
+              {
+                "time": 0.1333,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.0333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.1667,
+                "color": "ffffff00"
+              }
+            ]
+          },
+          "xiazhu": {
+            "color": [
+              {
+                "time": 0,
+                "color": "ffffff00"
+              },
+              {
+                "time": 0.1333,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.0333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.1667,
+                "color": "ffffff00"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "di": {
+            "translate": [
+              {
+                "time": 0,
+                "x": -1440.5,
+                "y": 0
+              },
+              {
+                "time": 0.3333,
+                "x": 0,
+                "y": 0,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.8333,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "time": 1.1667,
+                "x": 1430.49,
+                "y": 0
+              }
+            ]
+          },
+          "zi": {
+            "translate": [
+              {
+                "time": 0,
+                "x": 1302.91,
+                "y": 0
+              },
+              {
+                "time": 0.3333,
+                "x": 0,
+                "y": 0,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.8333,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "time": 1.1667,
+                "x": -1231.46,
+                "y": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\nLHD_xiazhu.png\nsize: 1024,512\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nlhd_kaishi\n  rotate: false\n  xy: 2, 2\n  size: 492, 121\n  orig: 492, 121\n  offset: 0, 0\n  index: -1\nlhd_room\n  rotate: false\n  xy: 2, 260\n  size: 879, 243\n  orig: 879, 243\n  offset: 0, 0\n  index: -1\nlhd_tingzhi\n  rotate: false\n  xy: 2, 125\n  size: 500, 133\n  orig: 500, 133\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "43bmSyUbJGVKQJTifaSCgP"
+    }
+  ],
+  "textureNames": [
+    "LHD_xiazhu.png"
+  ]
+}

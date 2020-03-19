@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "FJ_LHD_TYC",
+    "texture": "e2KZ4bWFVLYYkQfDkadF7z",
+    "rect": [
+      3,
+      3,
+      408,
+      434
+    ],
+    "offset": [
+      -49,
+      36
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

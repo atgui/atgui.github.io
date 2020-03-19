@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DT_CZ",
+    "texture": "c3abQ7p3NEJqQVbOwo/gTq",
+    "rect": [
+      2,
+      3,
+      804,
+      235
+    ],
+    "offset": [
+      -108,
+      7.5
+    ],
+    "originalSize": [
+      1024,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

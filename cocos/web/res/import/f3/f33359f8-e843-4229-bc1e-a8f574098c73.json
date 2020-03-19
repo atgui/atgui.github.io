@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DT_CZ_guang",
+    "texture": "f0YtCLchNA+I8d6BTzAQ4I",
+    "rect": [
+      3,
+      3,
+      149,
+      129
+    ],
+    "offset": [
+      -50.5,
+      60.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

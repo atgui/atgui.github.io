@@ -1,0 +1,151 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "DT_CZ",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "Pir5gBH8qU70QhSz6q6z6KW5Yr8",
+      "spine": "3.6.53",
+      "width": 341,
+      "height": 178.75,
+      "images": "./images/"
+    },
+    "bones": [
+      {
+        "name": "root"
+      },
+      {
+        "name": "jiantou_qian",
+        "parent": "root",
+        "x": -81.8,
+        "y": 49.38
+      }
+    ],
+    "slots": [
+      {
+        "name": "lobby_bg_4",
+        "bone": "root",
+        "attachment": "lobby_bg_4"
+      },
+      {
+        "name": "di",
+        "bone": "root",
+        "attachment": "di"
+      },
+      {
+        "name": "zi",
+        "bone": "root",
+        "attachment": "zi"
+      },
+      {
+        "name": "zi_guang",
+        "bone": "root",
+        "attachment": "zi_guang"
+      },
+      {
+        "name": "jiantou_hou",
+        "bone": "jiantou_qian",
+        "attachment": "jiantou_hou"
+      },
+      {
+        "name": "jiantou_qian",
+        "bone": "jiantou_qian",
+        "attachment": "jiantou_qian"
+      }
+    ],
+    "skins": {
+      "default": {
+        "di": {
+          "di": {
+            "x": 16.18,
+            "y": 65.53,
+            "width": 186,
+            "height": 158
+          }
+        },
+        "jiantou_hou": {
+          "jiantou_hou": {
+            "x": -19.01,
+            "y": -4.35,
+            "width": 134,
+            "height": 105
+          }
+        },
+        "jiantou_qian": {
+          "jiantou_qian": {
+            "x": -11.51,
+            "y": 0.65,
+            "width": 121,
+            "height": 99
+          }
+        },
+        "lobby_bg_4": {
+          "lobby_bg_4": {
+            "y": 17.28,
+            "width": 341,
+            "height": 103
+          }
+        },
+        "zi": {
+          "zi": {
+            "x": 19.68,
+            "y": 70.53,
+            "width": 151,
+            "height": 128
+          }
+        },
+        "zi_guang": {
+          "zi_guang": {
+            "x": 22.68,
+            "y": 74.03,
+            "width": 151,
+            "height": 131
+          }
+        }
+      }
+    },
+    "animations": {
+      "animation": {
+        "bones": {
+          "jiantou_qian": {
+            "translate": [
+              {
+                "time": 0,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "time": 0.6667,
+                "x": -10.18,
+                "y": -4.85
+              },
+              {
+                "time": 1.3333,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "time": 2,
+                "x": -10.18,
+                "y": -4.85
+              },
+              {
+                "time": 2.6667,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\nDT_CZ.png\nsize: 1024,256\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\ndi\n  rotate: false\n  xy: 345, 80\n  size: 186, 158\n  orig: 186, 158\n  offset: 0, 0\n  index: -1\njiantou_hou\n  rotate: false\n  xy: 155, 28\n  size: 134, 105\n  orig: 134, 105\n  offset: 0, 0\n  index: -1\njiantou_qian\n  rotate: false\n  xy: 686, 139\n  size: 121, 99\n  orig: 121, 99\n  offset: 0, 0\n  index: -1\nlobby_bg_4\n  rotate: false\n  xy: 2, 135\n  size: 341, 103\n  orig: 341, 103\n  offset: 0, 0\n  index: -1\nzi\n  rotate: false\n  xy: 533, 110\n  size: 151, 128\n  orig: 151, 128\n  offset: 0, 0\n  index: -1\nzi_guang\n  rotate: false\n  xy: 2, 2\n  size: 151, 131\n  orig: 151, 131\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "c3abQ7p3NEJqQVbOwo/gTq"
+    }
+  ],
+  "textureNames": [
+    "DT_CZ.png"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "room_bg6",
+    "texture": "22R6e81WdFJKoi2Qk1FYb9",
+    "rect": [
+      0,
+      0,
+      89,
+      85
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      89,
+      85
+    ],
+    "capInsets": [
+      34,
+      30,
+      34,
+      33
+    ]
+  }
+}

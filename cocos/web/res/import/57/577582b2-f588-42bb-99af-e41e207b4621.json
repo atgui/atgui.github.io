@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "FJ_LHD_SSC",
+    "texture": "57kUvCPctP+rsykQfWymHi",
+    "rect": [
+      3,
+      3,
+      482,
+      503
+    ],
+    "offset": [
+      -12,
+      1.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

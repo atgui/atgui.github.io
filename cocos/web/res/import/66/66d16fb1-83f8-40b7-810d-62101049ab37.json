@@ -1,0 +1,52 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "activityButton",
+    "data": {
+      "__id__": 1
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "activityButton",
+    "_components": [
+      {
+        "__type__": "feca31RuaFINYtAE2A85EG8",
+        "node": {
+          "__id__": 1
+        }
+      }
+    ],
+    "_prefab": {
+      "__type__": "cc.PrefabInfo",
+      "root": {
+        "__id__": 1
+      },
+      "asset": {
+        "__uuid__": "660W+xg/hAt4ENYhAQSas3"
+      },
+      "fileId": "c6q302PYZLpKfZ63REPTD1"
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 90,
+      "height": 73
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]

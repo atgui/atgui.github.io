@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lhd_dragon",
+    "texture": "e2FF+dr19PZ6f1YEMDUcDg",
+    "rect": [
+      0,
+      0,
+      724,
+      471
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      724,
+      471
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

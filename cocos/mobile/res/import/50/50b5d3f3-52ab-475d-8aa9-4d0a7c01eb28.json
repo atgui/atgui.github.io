@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "room_bg4",
+    "texture": "4aUhBHQ5VJwbtU07SPj5Xm",
+    "rect": [
+      0,
+      0,
+      398,
+      684
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      398,
+      685
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

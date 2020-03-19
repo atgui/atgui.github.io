@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "FJ_LHD_ZJC",
+    "texture": "fe9zMJ9olBTKAxdM2PGPAW",
+    "rect": [
+      3,
+      3,
+      474,
+      220
+    ],
+    "offset": [
+      -16,
+      15
+    ],
+    "originalSize": [
+      512,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
