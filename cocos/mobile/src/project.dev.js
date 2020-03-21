@@ -2348,6 +2348,7 @@ window.__require = function e(t, n, r) {
                     this._daluArray[0][0] = recordMod;
                     this._drawModel.col = 0;
                     this._drawModel.row = 0;
+                    1 == recordMod.type && this._daluArray[0][0].isHe++;
                     return [ 4, this._drawModel.draw.draw(0, 0, recordMod, this._drawModel.type) ];
 
                    case 1:
@@ -2367,11 +2368,21 @@ window.__require = function e(t, n, r) {
                     return [ 2 ];
 
                    case 4:
-                    if (!(mod.type == recordMod.type)) return [ 3, 11 ];
+                    if (!(1 == mod.type)) return [ 3, 6 ];
+                    mod.type = recordMod.type;
+                    return [ 4, this._drawModel.draw.draw(this._drawModel.row, this._drawModel.col, mod, this._drawModel.type) ];
+
+                   case 5:
+                    _a.sent();
+                    r();
+                    return [ 2 ];
+
+                   case 6:
+                    if (!(mod.type == recordMod.type)) return [ 3, 13 ];
                     col = this._drawModel.col;
                     upMod = null;
                     col > -1 && (upMod = this._daluArray[col][this._drawModel.row + 1]);
-                    if (!upMod) return [ 3, 6 ];
+                    if (!upMod) return [ 3, 8 ];
                     newCol = col + 1;
                     console.log("TAG \u6709\u6570\u636e\u4e86...", newCol, this._drawModel.row + 1);
                     this._daluArray[newCol] || (this._daluArray[newCol] = new Array());
@@ -2380,37 +2391,37 @@ window.__require = function e(t, n, r) {
                     this._drawModel.minRow = this._drawModel.row;
                     return [ 4, this._drawModel.draw.draw(this._drawModel.row, newCol, recordMod, this._drawModel.type) ];
 
-                   case 5:
-                    _a.sent();
-                    r();
-                    return [ 3, 10 ];
-
-                   case 6:
-                    if (!(this._drawModel.row + 1 >= this._drawModel.minRow)) return [ 3, 8 ];
-                    this._drawModel.col++;
-                    this._daluArray[this._drawModel.col] || (this._daluArray[this._drawModel.col] = new Array());
-                    this._daluArray[this._drawModel.col][this._drawModel.row] = recordMod;
-                    return [ 4, this._drawModel.draw.draw(this._drawModel.row, this._drawModel.col, recordMod, this._drawModel.type) ];
-
                    case 7:
                     _a.sent();
                     r();
-                    return [ 2 ];
+                    return [ 3, 12 ];
 
                    case 8:
-                    this._drawModel.row++;
+                    if (!(this._drawModel.row + 1 >= this._drawModel.minRow)) return [ 3, 10 ];
+                    this._drawModel.col++;
+                    this._daluArray[this._drawModel.col] || (this._daluArray[this._drawModel.col] = new Array());
                     this._daluArray[this._drawModel.col][this._drawModel.row] = recordMod;
                     return [ 4, this._drawModel.draw.draw(this._drawModel.row, this._drawModel.col, recordMod, this._drawModel.type) ];
 
                    case 9:
                     _a.sent();
                     r();
-                    _a.label = 10;
+                    return [ 2 ];
 
                    case 10:
-                    return [ 3, 13 ];
+                    this._drawModel.row++;
+                    this._daluArray[this._drawModel.col][this._drawModel.row] = recordMod;
+                    return [ 4, this._drawModel.draw.draw(this._drawModel.row, this._drawModel.col, recordMod, this._drawModel.type) ];
 
                    case 11:
+                    _a.sent();
+                    r();
+                    _a.label = 12;
+
+                   case 12:
+                    return [ 3, 15 ];
+
+                   case 13:
                     this._drawModel.startCol++;
                     this._drawModel.minRow = 6;
                     this._daluArray[this._drawModel.startCol] || (this._daluArray[this._drawModel.startCol] = new Array());
@@ -2419,12 +2430,12 @@ window.__require = function e(t, n, r) {
                     this._drawModel.col = this._drawModel.startCol;
                     return [ 4, this._drawModel.draw.draw(0, this._drawModel.col, recordMod, this._drawModel.type) ];
 
-                   case 12:
+                   case 14:
                     _a.sent();
                     r();
-                    _a.label = 13;
+                    _a.label = 15;
 
-                   case 13:
+                   case 15:
                     return [ 2 ];
                   }
                 });
@@ -6312,6 +6323,8 @@ window.__require = function e(t, n, r) {
     var ServerIds_1 = require("./ServerIds");
     var LhdServer = function() {
       function LhdServer(_socket) {
+        this.CARD_LIST = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61 ];
+        this.cards = [];
         this._status = 0;
         this._fun = new Array();
         this._funIndex = 0;
@@ -6350,7 +6363,7 @@ window.__require = function e(t, n, r) {
         obj["data"] = {
           free: 0,
           chips: [ 1, 10, 50, 100, 200, 500 ],
-          records: [ 2, 1, 2, 2, 0, 0, 1, 2, 0, 1 ]
+          records: [ 1, 1, 1, 1, 2, 0, 1, 2, 1, 0 ]
         };
         this.socket.onMessage(JSON.stringify(obj));
       };
@@ -6369,19 +6382,20 @@ window.__require = function e(t, n, r) {
         this.socket.onMessage(JSON.stringify(cmd));
         setTimeout(function() {
           _this.__next__();
-        }, 1e3);
+        }, 2e3);
+        for (var i = 0; i < this.CARD_LIST.length; i++) this.cards.push(this.CARD_LIST[i]);
       };
       LhdServer.prototype._startBet = function() {
         var _this = this;
         this._status = ServerStuts_1.ServerStuts.START_BET;
         var cmd = new Object();
         cmd["cmd"] = ServerIds_1.default.CD_TIME;
-        cmd["cd_time"] = 5;
+        cmd["cd_time"] = 15;
         cmd["cd_type"] = this._status;
         this.socket.onMessage(JSON.stringify(cmd));
         setTimeout(function() {
           _this.__next__();
-        }, 5e3);
+        }, 15e3);
         this._betUdpate();
       };
       LhdServer.prototype._stopBet = function() {
@@ -6391,7 +6405,7 @@ window.__require = function e(t, n, r) {
         this._status = ServerStuts_1.ServerStuts.STOP_BET;
         var cmd = new Object();
         cmd["cmd"] = ServerIds_1.default.CD_TIME;
-        cmd["cd_time"] = 5;
+        cmd["cd_time"] = 10;
         cmd["cd_type"] = this._status;
         this.socket.onMessage(JSON.stringify(cmd));
         setTimeout(function() {
@@ -6403,17 +6417,24 @@ window.__require = function e(t, n, r) {
         this._status = ServerStuts_1.ServerStuts.STOP_BET;
         var cmd = new Object();
         cmd["cmd"] = ServerIds_1.default.GAME_OVER;
-        var result = Math.floor(3 * Math.random());
+        var cardList = [];
+        for (var i = 0; i < 2; i++) {
+          var index = Math.floor(Math.random() * this.cards.length);
+          var value = this.cards.splice(index, 1)[0];
+          cardList.push(value);
+        }
+        var result = cardList[0] > cardList[1] ? 0 : cardList[0] == cardList[1] ? 1 : 2;
         cmd["result"] = result;
         var winGold = this.bets[result] * (1 == result ? 9 : 2);
         var total = this.bets[0] + this.bets[1] + this.bets[2];
         var win = winGold - total;
         cmd["winArea"] = [ 0 == result, 1 == result, 2 == result ];
-        cmd["win"] = win;
+        cmd["wGold"] = win;
+        cmd["cards"] = cardList;
         this.socket.onMessage(JSON.stringify(cmd));
         setTimeout(function() {
           _this.__next__();
-        }, 3e3);
+        }, 9e3);
       };
       LhdServer.prototype._betUdpate = function() {
         var _this = this;
@@ -6476,6 +6497,9 @@ window.__require = function e(t, n, r) {
     var Chouma_1 = require("../../common/Chouma");
     var SocketManager_1 = require("../../code/network/SocketManager");
     var ActionIds_1 = require("../../code/common/ActionIds");
+    var Piaofen_1 = require("../../common/Piaofen");
+    var TimerTs_1 = require("./TimerTs");
+    var Poker_1 = require("../../common/poker/Poker");
     var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
     var LhdTs = function(_super) {
       __extends(LhdTs, _super);
@@ -6488,7 +6512,14 @@ window.__require = function e(t, n, r) {
         this.view["lhd_pailu/historyButton"].on(cc.Node.EventType.TOUCH_END, this._touchHistory.bind(this), this);
         var betNodeArr = [ "lhd_contentbg/longNode", "lhd_contentbg/heNode", "lhd_contentbg/huNode", "xuyaButton" ];
         for (var i = 0; i < betNodeArr.length; i++) (function(i) {
+          var vNode = this.view[betNodeArr[i] + "/shansuo"];
+          vNode && (vNode.opacity = 0);
           this.view[betNodeArr[i]].on(cc.Node.EventType.TOUCH_END, function() {
+            vNode && cc.tween(vNode).to(.1, {
+              opacity: 255
+            }).to(.1, {
+              opacity: 0
+            }).start();
             this._touchBet(i);
           }.bind(this), this);
         }).bind(this)(i);
@@ -6524,7 +6555,8 @@ window.__require = function e(t, n, r) {
               types: types_1,
               golds: golds_1
             };
-            cmd_1["cmd"] = 100001;
+            cmd_1["cmd"] = ActionIds_1.default.BET;
+            SocketManager_1.default.instance.send(JSON.stringify(cmd_1));
           }
           return;
         }
@@ -6721,6 +6753,20 @@ window.__require = function e(t, n, r) {
         _cdNode.removeAllChildren();
         this._updateSelf();
         this._updateTotal();
+        var longPoker = this.view["lhd_rbg0/longPoker"].getComponent(Poker_1.default);
+        longPoker.showBg();
+        var huPoker = this.view["lhd_rbg0/huPoker"].getComponent(Poker_1.default);
+        huPoker.showBg();
+        if (!this._cdGuangNode) {
+          var _cdNode_1 = this.view["animationNode"];
+          this._cdNode = new cc.Node();
+          _cdNode_1.addChild(this._cdNode);
+          this._cdGuangNode = new cc.Node();
+          _cdNode_1.addChild(this._cdGuangNode);
+        }
+        var skin = "default";
+        UIManager_1.default.loadSpine("games/lhd/spines/LHD_vs", this._cdNode, function(sk) {}.bind(this), skin, 0, "animation", false);
+        UIManager_1.default.loadSpine("games/lhd/spines/LHD_vs_guang", this._cdGuangNode, function(sk) {}.bind(this), skin, 0, "animation", false);
       };
       LhdTs.prototype._cdTime = function(cmd, ev) {
         var e = JSON.parse(ev);
@@ -6733,15 +6779,68 @@ window.__require = function e(t, n, r) {
           this._cdGuangNode = new cc.Node();
           _cdNode.addChild(this._cdGuangNode);
         }
+        var timeTs = this.view["lhd_rbg0/time"].getComponent(TimerTs_1.default);
+        timeTs.showTimer(e.cd_time);
         var skin = cdType == ServerStuts_1.ServerStuts.START_BET ? "kaishixiazhu" : "tingzhixiazhu";
         UIManager_1.default.loadSpine("games/lhd/spines/LHD_xiazhu", this._cdNode, function(sk) {}.bind(this), skin, 0, "animation", false);
         UIManager_1.default.loadSpine("games/lhd/spines/LHD_xiazhu_guang", this._cdGuangNode, function(sk) {}.bind(this), "default", 0, "animation", false);
       };
       LhdTs.prototype._gameOver = function(cmd, ev) {
-        console.log("TAG \u7ed3\u7b97:", ev);
-        var e = JSON.parse(ev);
-        LhdManager_1.default.instance.record.push(e["result"]);
-        this._loadItem(e["result"]);
+        return __awaiter(this, void 0, void 0, function() {
+          var e, longPoker, huPoker, betNodeArr, winArea, index, sRes, tw, i, winGold, headNode_1;
+          return __generator(this, function(_a) {
+            switch (_a.label) {
+             case 0:
+              console.log("TAG \u7ed3\u7b97:", ev);
+              e = JSON.parse(ev);
+              longPoker = this.view["lhd_rbg0/longPoker"].getComponent(Poker_1.default);
+              return [ 4, longPoker.setValue(e.cards[0]) ];
+
+             case 1:
+              _a.sent();
+              huPoker = this.view["lhd_rbg0/huPoker"].getComponent(Poker_1.default);
+              return [ 4, huPoker.setValue(e.cards[1]) ];
+
+             case 2:
+              _a.sent();
+              betNodeArr = [ "lhd_contentbg/longNode", "lhd_contentbg/heNode", "lhd_contentbg/huNode" ];
+              winArea = e.winArea;
+              index = winArea.indexOf(true);
+              sRes = betNodeArr[index] + "/shansuo";
+              this.view[sRes].opacity = 0;
+              tw = cc.tween(this.view[sRes]);
+              for (i = 0; i < 10; i++) tw.to(.2, {
+                opacity: i % 2 == 0 ? 255 : 0
+              });
+              tw.start();
+              LhdManager_1.default.instance.record.push(e["result"]);
+              this._loadItem(e["result"]);
+              winGold = e["wGold"];
+              if (0 != winGold) {
+                headNode_1 = this.view["head"];
+                headNode_1.opacity;
+                UIManager_1.default.loadPrefab("prefab/common/piaofen", function(data) {
+                  var pfNode = cc.instantiate(data);
+                  pfNode.opacity = 0;
+                  headNode_1.addChild(pfNode);
+                  var piaofen = pfNode.getComponent(Piaofen_1.default);
+                  piaofen.setResult(winGold);
+                  cc.tween(pfNode).to(.3, {
+                    y: 110,
+                    opacity: 255
+                  }).to(1, {
+                    y: 110
+                  }).to(.5, {
+                    opacity: 0
+                  }).call(function() {
+                    pfNode.destroy();
+                  }).start();
+                }.bind(this), this);
+              }
+              return [ 2 ];
+            }
+          });
+        });
       };
       LhdTs.prototype._touchHistory = function() {
         UIManager_1.default.loadPrefab("prefab/games/lhd/historybg", function(res) {
@@ -6777,7 +6876,10 @@ window.__require = function e(t, n, r) {
     "../../code/network/debug/game_server/ServerStuts": "ServerStuts",
     "../../common/ChipList": "ChipList",
     "../../common/Chouma": "Chouma",
+    "../../common/Piaofen": "Piaofen",
+    "../../common/poker/Poker": "Poker",
     "./LhdManager": "LhdManager",
+    "./TimerTs": "TimerTs",
     "./draw/ResItem": "ResItem"
   } ],
   LoadingProgress: [ function(require, module, exports) {
@@ -7253,7 +7355,9 @@ window.__require = function e(t, n, r) {
     var MainRoomTs = function(_super) {
       __extends(MainRoomTs, _super);
       function MainRoomTs() {
-        return null !== _super && _super.apply(this, arguments) || this;
+        var _this = null !== _super && _super.apply(this, arguments) || this;
+        _this.closeFun = null;
+        return _this;
       }
       MainRoomTs.prototype.onLoad = function() {
         this.init(this.node, "");
@@ -7315,52 +7419,22 @@ window.__require = function e(t, n, r) {
           return __generator(this, function(_a) {
             scrollView = this.view["roomList"].getComponent(cc.ScrollView);
             return [ 2, new Promise(function(r, j) {
-              return __awaiter(_this, void 0, void 0, function() {
-                var roomNode, roomTs;
-                return __generator(this, function(_a) {
-                  switch (_a.label) {
-                   case 0:
-                    if (!this._prefab) return [ 3, 2 ];
-                    roomNode = cc.instantiate(this._prefab);
-                    scrollView.content.addChild(roomNode);
-                    roomTs = roomNode.getComponent(RoomTs_1.default);
-                    roomTs.setCallback(this._call);
-                    return [ 4, roomTs.setRoom(room) ];
-
-                   case 1:
-                    _a.sent();
-                    r();
-                    return [ 3, 3 ];
-
-                   case 2:
-                    UIManager_1.default.loadPrefab("prefab/hall/room_bg", function(data) {
-                      return __awaiter(this, void 0, void 0, function() {
-                        var roomNode, roomTs;
-                        return __generator(this, function(_a) {
-                          switch (_a.label) {
-                           case 0:
-                            this._prefab = data;
-                            roomNode = cc.instantiate(data);
-                            scrollView.content.addChild(roomNode);
-                            roomTs = roomNode.getComponent(RoomTs_1.default);
-                            roomTs.setCallback(this._call);
-                            return [ 4, roomTs.setRoom(room) ];
-
-                           case 1:
-                            _a.sent();
-                            r();
-                            return [ 2 ];
-                          }
-                        });
-                      });
-                    }.bind(this), this);
-                    _a.label = 3;
-
-                   case 3:
-                    return [ 2 ];
-                  }
-                });
-              });
+              if (_this._prefab) {
+                var roomNode = cc.instantiate(_this._prefab);
+                scrollView.content.addChild(roomNode);
+                var roomTs = roomNode.getComponent(RoomTs_1.default);
+                roomTs.setCallback(_this._call);
+                roomTs.setRoom(room);
+                r();
+              } else UIManager_1.default.loadPrefab("prefab/hall/room_bg", function(data) {
+                this._prefab = data;
+                var roomNode = cc.instantiate(data);
+                scrollView.content.addChild(roomNode);
+                var roomTs = roomNode.getComponent(RoomTs_1.default);
+                roomTs.setCallback(this._call);
+                roomTs.setRoom(room);
+                r();
+              }.bind(_this), _this);
             }) ];
           });
         });
@@ -7535,6 +7609,34 @@ window.__require = function e(t, n, r) {
   }, {
     AutoReconnectWsRpcClient: "AutoReconnectWsRpcClient"
   } ],
+  Piaofen: [ function(require, module, exports) {
+    "use strict";
+    cc._RF.push(module, "66579WmkM5KjLksZKbeec4o", "Piaofen");
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var UIController_1 = require("../code/base/UIController");
+    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+    var Piaofen = function(_super) {
+      __extends(Piaofen, _super);
+      function Piaofen() {
+        return null !== _super && _super.apply(this, arguments) || this;
+      }
+      Piaofen.prototype.onLoad = function() {
+        this.init(this.node, "");
+      };
+      Piaofen.prototype.setResult = function(gold) {
+        var goldLabel = this.view["goldLabel"].getComponent(cc.Label);
+        goldLabel.string = gold > 0 ? "+" + gold : gold + "";
+      };
+      Piaofen = __decorate([ ccclass ], Piaofen);
+      return Piaofen;
+    }(UIController_1.default);
+    exports.default = Piaofen;
+    cc._RF.pop();
+  }, {
+    "../code/base/UIController": "UIController"
+  } ],
   PlatForm: [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "de8d9gUzDpNh6lw/IN8XtEL", "PlatForm");
@@ -7552,6 +7654,136 @@ window.__require = function e(t, n, r) {
     exports.default = PlatForm;
     cc._RF.pop();
   }, {} ],
+  PokeModel: [ function(require, module, exports) {
+    "use strict";
+    cc._RF.push(module, "f8df1nGVGNL/YsjVuSdIs0o", "PokeModel");
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var PokerModel = function() {
+      function PokerModel() {
+        this.CARD_TYPE = 240;
+        this.CARD_VALUE = 15;
+      }
+      PokerModel.prototype.getValue = function() {
+        return this.id & this.CARD_VALUE;
+      };
+      PokerModel.prototype.getColor = function() {
+        return this.id & this.CARD_TYPE;
+      };
+      PokerModel.prototype.setId = function(_id) {
+        this.id = _id;
+      };
+      return PokerModel;
+    }();
+    exports.default = PokerModel;
+    cc._RF.pop();
+  }, {} ],
+  Poker: [ function(require, module, exports) {
+    "use strict";
+    cc._RF.push(module, "9f2b3XeJORNeYiB0VUhG8/Z", "Poker");
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var UIController_1 = require("../../code/base/UIController");
+    var PokeModel_1 = require("./PokeModel");
+    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+    var Poker = function(_super) {
+      __extends(Poker, _super);
+      function Poker() {
+        return null !== _super && _super.apply(this, arguments) || this;
+      }
+      Poker.prototype.onLoad = function() {
+        this._pokerModel = new PokeModel_1.default();
+        this.init(this.node, "");
+      };
+      Poker.prototype.showBg = function() {
+        this.view["valueSprite"].active = false;
+        this.view["colorSprite"].active = false;
+        this.view["oSprite"].active = false;
+        this.view["bg1"].active = true;
+        this.node.scaleX = -.5;
+      };
+      Poker.prototype.setValue = function(value) {
+        return __awaiter(this, void 0, void 0, function() {
+          var _this = this;
+          return __generator(this, function(_a) {
+            this._pokerModel.setId(value);
+            return [ 2, new Promise(function(r, j) {
+              cc.tween(_this.node).to(.5, {
+                scaleX: 0
+              }).call(function() {
+                _this.view["valueSprite"].active = true;
+                _this.view["colorSprite"].active = true;
+                _this.view["oSprite"].active = true;
+                _this.view["bg1"].active = false;
+                var valueSprite = _this.view["valueSprite"].getComponent(cc.Sprite);
+                cc.loader.loadRes(_this._getRes(), cc.SpriteFrame, function(err, data) {
+                  if (err) return;
+                  valueSprite.spriteFrame = data;
+                });
+                var colorSprite = _this.view["colorSprite"].getComponent(cc.Sprite);
+                cc.loader.loadRes(_this._getColorRes(), cc.SpriteFrame, function(err, data) {
+                  if (err) return;
+                  colorSprite.spriteFrame = data;
+                });
+                var oSprite = _this.view["oSprite"].getComponent(cc.Sprite);
+                cc.loader.loadRes(_this._getColorORes(), cc.SpriteFrame, function(err, data) {
+                  if (err) return;
+                  oSprite.spriteFrame = data;
+                });
+              }).to(.5, {
+                scaleX: .5
+              }).call(function() {
+                r();
+              }).start();
+            }) ];
+          });
+        });
+      };
+      Poker.prototype._getRes = function() {
+        var color = this._pokerModel.getColor();
+        var value = this._pokerModel.getValue();
+        var colorRes = 1 == value ? "A" : 11 == value ? "J" : 12 == value ? "Q" : 13 == value ? "K" : value + "";
+        16 != color && 48 != color || (colorRes += "_1");
+        return "common/pokers/" + colorRes;
+      };
+      Poker.prototype._getColorRes = function() {
+        var color = this._pokerModel.getColor();
+        var colorRes = "";
+        switch (color) {
+         case 0:
+          colorRes = "fangkuai";
+          break;
+
+         case 16:
+          colorRes = "meihua";
+          break;
+
+         case 32:
+          colorRes = "hongtao";
+          break;
+
+         case 48:
+          colorRes = "heitao";
+        }
+        return "common/pokers/" + colorRes;
+      };
+      Poker.prototype._getColorORes = function() {
+        return this._pokerModel.getValue() > 10 ? "common/pokers/J_1_icon" : this._getColorRes();
+      };
+      Poker.prototype.onDestroy = function() {
+        this._pokerModel = null;
+      };
+      Poker = __decorate([ ccclass ], Poker);
+      return Poker;
+    }(UIController_1.default);
+    exports.default = Poker;
+    cc._RF.pop();
+  }, {
+    "../../code/base/UIController": "UIController",
+    "./PokeModel": "PokeModel"
+  } ],
   ResDraw: [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "64fdbVWJA1HQofqprGGiJWL", "ResDraw");
@@ -7573,29 +7805,41 @@ window.__require = function e(t, n, r) {
             __self = this;
             return [ 2, new Promise(function(r, j) {
               console.log("TAGSS \u753b\u5bf9\u5e94\u8d44\u6e90:", result, t);
-              if (result.isHe > 0 && result.type > -1) r(); else {
-                var scrollView_1 = _this._node;
-                var resUrl_1 = _this._getItemRes(t);
-                var v2_1 = _this._getPosition(col, row, t);
-                if (_this._prefabs[resUrl_1]) {
-                  var itemNode = cc.instantiate(_this._prefabs[resUrl_1]);
-                  scrollView_1.content.addChild(itemNode);
-                  __self._endNode = itemNode;
-                  itemNode.position = v2_1;
-                  var item = itemNode.getComponent(ResItem_1.default);
-                  item.setResult(result.type, t);
-                  r();
-                } else UIManager_1.default.loadPrefab(resUrl_1, function(res) {
-                  this._prefabs[resUrl_1] = res;
-                  var itemNode = cc.instantiate(res);
-                  scrollView_1.content.addChild(itemNode);
-                  itemNode.position = v2_1;
-                  __self._endNode = itemNode;
-                  var item = itemNode.getComponent(ResItem_1.default);
-                  item.setResult(result.type, t);
-                  r();
-                }.bind(_this), _this);
+              if (result.isHe > 0 && result.type > -1 && __self._endNode) {
+                var label = _this._endNode.getChildByName("heLabel").getComponent(cc.Label);
+                label.string = result.isHe + "";
+                r();
+                return;
               }
+              var scrollView = _this._node;
+              var resUrl = _this._getItemRes(t);
+              var v2 = _this._getPosition(col, row, t);
+              if (_this._prefabs[resUrl]) {
+                var itemNode = cc.instantiate(_this._prefabs[resUrl]);
+                scrollView.content.addChild(itemNode);
+                __self._endNode = itemNode;
+                itemNode.position = v2;
+                var item = itemNode.getComponent(ResItem_1.default);
+                item.setResult(result.type, t);
+                if (result.isHe > 0) {
+                  var label = itemNode.getChildByName("heLabel").getComponent(cc.Label);
+                  label.string = result.isHe + "";
+                }
+                r();
+              } else UIManager_1.default.loadPrefab(resUrl, function(res) {
+                this._prefabs[resUrl] = res;
+                var itemNode = cc.instantiate(res);
+                scrollView.content.addChild(itemNode);
+                itemNode.position = v2;
+                __self._endNode = itemNode;
+                var item = itemNode.getComponent(ResItem_1.default);
+                item.setResult(result.type, t);
+                if (result.isHe > 0) {
+                  var label = itemNode.getChildByName("heLabel").getComponent(cc.Label);
+                  label.string = result.isHe + "";
+                }
+                r();
+              }.bind(_this), _this);
             }) ];
           });
         });
@@ -7736,29 +7980,20 @@ window.__require = function e(t, n, r) {
       };
       RoomTs.prototype.start = function() {};
       RoomTs.prototype.setRoom = function(room) {
-        return __awaiter(this, void 0, void 0, function() {
-          var enterLabel, playerLabel, iconNode, roomRes;
-          var _this = this;
-          return __generator(this, function(_a) {
-            this._room = room;
-            console.log("TAG \u623f\u95f4\u4fe1\u606f:", room);
-            enterLabel = this.view["enterLabel"].getComponent(cc.Label);
-            enterLabel.string = "\u8fdb\u5165:" + room.init;
-            playerLabel = this.view["playerLabel"].getComponent(cc.Label);
-            playerLabel.string = room.playerCount;
-            iconNode = this.view["iconNode"];
-            roomRes = this._getRoomRes(room.level);
-            return [ 2, new Promise(function(r, j) {
-              cc.loader.loadRes(roomRes, sp.SkeletonData, function(err, data) {
-                var sk = iconNode.addComponent(sp.Skeleton);
-                sk.skeletonData = data;
-                sk.setAnimation(0, "animation", true);
-                sk.premultipliedAlpha = false;
-                r();
-              }.bind(_this));
-            }) ];
-          });
-        });
+        this._room = room;
+        console.log("TAG \u623f\u95f4\u4fe1\u606f:", room);
+        var enterLabel = this.view["enterLabel"].getComponent(cc.Label);
+        enterLabel.string = "\u8fdb\u5165:" + room.init;
+        var playerLabel = this.view["playerLabel"].getComponent(cc.Label);
+        playerLabel.string = room.playerCount;
+        var iconNode = this.view["iconNode"];
+        var roomRes = this._getRoomRes(room.level);
+        cc.loader.loadRes(roomRes, sp.SkeletonData, function(err, data) {
+          var sk = iconNode.addComponent(sp.Skeleton);
+          sk.skeletonData = data;
+          sk.setAnimation(0, "animation", true);
+          sk.premultipliedAlpha = false;
+        }.bind(this));
       };
       RoomTs.prototype._getRoomRes = function(level) {
         var res = "";
@@ -8717,6 +8952,48 @@ window.__require = function e(t, n, r) {
     exports.default = Socket;
     cc._RF.pop();
   }, {} ],
+  TimerTs: [ function(require, module, exports) {
+    "use strict";
+    cc._RF.push(module, "41b959ZuxhNSpmndjPcs2Gl", "TimerTs");
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var UIController_1 = require("../../code/base/UIController");
+    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+    var TimerTs = function(_super) {
+      __extends(TimerTs, _super);
+      function TimerTs() {
+        return null !== _super && _super.apply(this, arguments) || this;
+      }
+      TimerTs.prototype.onLoad = function() {
+        this.init(this.node, "");
+        this.node.active = false;
+      };
+      TimerTs.prototype.showTimer = function(t) {
+        var _this = this;
+        this.node.active = true;
+        this._time = t;
+        this._timeSamp = new Date().getTime();
+        var timeLabel = this.view["timeSpriite/timeLabel"].getComponent(cc.Label);
+        timeLabel.string = t + "";
+        this._t = setInterval(function() {
+          var totalTime = Math.floor((new Date().getTime() - _this._timeSamp) / 1e3);
+          var timeValue = _this._time - totalTime;
+          timeValue < 0 && (timeValue = 0);
+          timeLabel.string = timeValue + "";
+        }, 1e3);
+      };
+      TimerTs.prototype.onDestroy = function() {
+        clearInterval(this._t);
+      };
+      TimerTs = __decorate([ ccclass ], TimerTs);
+      return TimerTs;
+    }(UIController_1.default);
+    exports.default = TimerTs;
+    cc._RF.pop();
+  }, {
+    "../../code/base/UIController": "UIController"
+  } ],
   UIController: [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "bc57cMAEOND6rUyXnsSVsfA", "UIController");
@@ -9656,4 +9933,4 @@ window.__require = function e(t, n, r) {
     "./Draw": "Draw",
     "./DrawModel": "DrawModel"
   } ]
-}, {}, [ "HotUpdate", "AppStart", "UIController", "UIManager", "Action", "ActionIds", "ActionManager", "Broadcast", "EventManager", "GameEvent", "GameEventIds", "HandlerModel", "LoadingProgress", "EventEmitter", "NativeHelper", "NativeJs", "PlatForm", "HttpHelper", "INetInterface", "NetTips", "Socket", "SocketManager", "SocketNode", "DebugGameServer", "DebugHallServer", "DebugLoginServer", "DebugServer", "HallData", "IServer", "IGameServer", "LhdServer", "ServerIds", "ServerStuts", "ASocketManager", "AutoSocketClient", "SocketClient", "AutoReconnectWsRpcClient", "ChipList", "Chouma", "CreatorHelper", "EventEmitters", "MD5", "Menu.ts", "NewScript", "UmengNative", "UnitTools", "Utils", "WsRpcClient", "LhdHistoryTs", "LhdManager", "LhdTs", "Dalu", "Dayanzai", "Draw", "DrawModel", "IDraw", "Jiayoulu", "LhdGroup", "ResDraw", "ResItem", "Xiaolu", "LHDEvent", "LhdRecordModel", "Server", "ActivityButtonTs", "GameListIcon", "HallTs", "MainHallTs", "MainRoomTs", "RoomTs", "AccountLoginTs", "LoginTs", "GameManager", "UserManager", "UserEntity" ]);
+}, {}, [ "HotUpdate", "AppStart", "UIController", "UIManager", "Action", "ActionIds", "ActionManager", "Broadcast", "EventManager", "GameEvent", "GameEventIds", "HandlerModel", "LoadingProgress", "EventEmitter", "NativeHelper", "NativeJs", "PlatForm", "HttpHelper", "INetInterface", "NetTips", "Socket", "SocketManager", "SocketNode", "DebugGameServer", "DebugHallServer", "DebugLoginServer", "DebugServer", "HallData", "IServer", "IGameServer", "LhdServer", "ServerIds", "ServerStuts", "ASocketManager", "AutoSocketClient", "SocketClient", "AutoReconnectWsRpcClient", "ChipList", "Chouma", "CreatorHelper", "EventEmitters", "MD5", "Menu.ts", "NewScript", "Piaofen", "UmengNative", "UnitTools", "Utils", "WsRpcClient", "PokeModel", "Poker", "LhdHistoryTs", "LhdManager", "LhdTs", "TimerTs", "Dalu", "Dayanzai", "Draw", "DrawModel", "IDraw", "Jiayoulu", "LhdGroup", "ResDraw", "ResItem", "Xiaolu", "LHDEvent", "LhdRecordModel", "Server", "ActivityButtonTs", "GameListIcon", "HallTs", "MainHallTs", "MainRoomTs", "RoomTs", "AccountLoginTs", "LoginTs", "GameManager", "UserManager", "UserEntity" ]);

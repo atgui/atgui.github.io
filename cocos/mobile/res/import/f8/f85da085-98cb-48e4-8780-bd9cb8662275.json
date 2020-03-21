@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "J_icon",
+    "texture": "44UA7KCDhJv6yb0N7RNdxy",
+    "rect": [
+      0,
+      14,
+      152,
+      212
+    ],
+    "offset": [
+      0,
+      -7
+    ],
+    "originalSize": [
+      152,
+      226
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

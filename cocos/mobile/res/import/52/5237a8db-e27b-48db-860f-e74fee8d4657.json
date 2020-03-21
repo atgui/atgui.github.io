@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Q_1_icon",
+    "texture": "a08Yo4b8JFA40qqDDDOWOS",
+    "rect": [
+      0,
+      15,
+      152,
+      211
+    ],
+    "offset": [
+      0,
+      -7.5
+    ],
+    "originalSize": [
+      152,
+      226
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

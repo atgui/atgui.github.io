@@ -1,0 +1,113 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "LHD_vs_guang",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "fvqzLLosQKXPt3vu8n7NzDXflfE",
+      "spine": "3.6.53",
+      "width": 1922,
+      "height": 708.9,
+      "images": "./image/"
+    },
+    "bones": [
+      {
+        "name": "root"
+      },
+      {
+        "name": "tx",
+        "parent": "root",
+        "scaleX": 6.654,
+        "scaleY": 6.654
+      }
+    ],
+    "slots": [
+      {
+        "name": "tx/tx (1)",
+        "bone": "tx",
+        "attachment": "tx/tx (2)",
+        "blend": "additive"
+      }
+    ],
+    "skins": {
+      "default": {
+        "tx/tx (1)": {
+          "tx/tx (1)": {
+            "width": 85,
+            "height": 85
+          },
+          "tx/tx (2)": {
+            "width": 85,
+            "height": 85
+          },
+          "tx/tx (3)": {
+            "width": 85,
+            "height": 85
+          },
+          "tx/tx (4)": {
+            "width": 85,
+            "height": 85
+          },
+          "tx/tx (5)": {
+            "width": 85,
+            "height": 85
+          },
+          "tx/tx (6)": {
+            "width": 85,
+            "height": 85
+          }
+        }
+      }
+    },
+    "animations": {
+      "animation": {
+        "slots": {
+          "tx/tx (1)": {
+            "attachment": [
+              {
+                "time": 0,
+                "name": null
+              },
+              {
+                "time": 0.6667,
+                "name": "tx/tx (1)"
+              },
+              {
+                "time": 0.7333,
+                "name": "tx/tx (2)"
+              },
+              {
+                "time": 0.8,
+                "name": "tx/tx (3)"
+              },
+              {
+                "time": 0.8667,
+                "name": "tx/tx (4)"
+              },
+              {
+                "time": 0.9333,
+                "name": "tx/tx (5)"
+              },
+              {
+                "time": 1,
+                "name": "tx/tx (6)"
+              },
+              {
+                "time": 1.0667,
+                "name": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\nLHD_vs_guang.png\nsize: 1024,128\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\ntx/tx (1)\n  rotate: false\n  xy: 89, 2\n  size: 85, 85\n  orig: 85, 85\n  offset: 0, 0\n  index: -1\ntx/tx (2)\n  rotate: false\n  xy: 176, 2\n  size: 85, 85\n  orig: 85, 85\n  offset: 0, 0\n  index: -1\ntx/tx (3)\n  rotate: false\n  xy: 263, 2\n  size: 85, 85\n  orig: 85, 85\n  offset: 0, 0\n  index: -1\ntx/tx (4)\n  rotate: false\n  xy: 350, 2\n  size: 85, 85\n  orig: 85, 85\n  offset: 0, 0\n  index: -1\ntx/tx (5)\n  rotate: false\n  xy: 437, 2\n  size: 85, 85\n  orig: 85, 85\n  offset: 0, 0\n  index: -1\ntx/tx (6)\n  rotate: false\n  xy: 2, 2\n  size: 85, 85\n  orig: 85, 85\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "12YS5aYh9BPaAitzUBAkb6"
+    }
+  ],
+  "textureNames": [
+    "LHD_vs_guang.png"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "LHD_vs_guang",
+    "texture": "12YS5aYh9BPaAitzUBAkb6",
+    "rect": [
+      10,
+      2,
+      512,
+      85
+    ],
+    "offset": [
+      -246,
+      19.5
+    ],
+    "originalSize": [
+      1024,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

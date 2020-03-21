@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "LHD_longying_guang",
+    "texture": "46G7sXFR9Cd5/GycENntHh",
+    "rect": [
+      2,
+      2,
+      902,
+      1015
+    ],
+    "offset": [
+      -59,
+      2.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
