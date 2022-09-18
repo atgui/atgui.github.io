@@ -1,1 +1,0 @@
-import{d as o,r as t,o as a,a as s,e as n,j as r}from"./index.9f059a2e.js";const c={key:0,class:"commonCls"},d=o({__name:"doctor",setup(u){const e=t(!1);return a(()=>{e.value=!0}),(m,_)=>e.value?(s(),n("div",c," \u533B\u751F\u7BA1\u7406 ")):r("",!0)}});export{d as default};

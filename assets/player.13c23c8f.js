@@ -1,1 +1,0 @@
-import{d as o,r as t,o as a,a as s,e as n,j as r}from"./index.9f059a2e.js";const c={key:0,class:"commonCls"},p=o({__name:"player",setup(u){const e=t(!1);return a(()=>{e.value=!0}),(l,m)=>e.value?(s(),n("div",c," \u60A3\u8005\u7BA1\u7406 ")):r("",!0)}});export{p as default};
