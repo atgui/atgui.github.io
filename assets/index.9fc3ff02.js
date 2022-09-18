@@ -1,1 +1,0 @@
-import{d as o,r as t,o as s,a,e as n,j as r}from"./index.db43cd72.js";const c={key:0,class:"commonCls"},d=o({__name:"index",setup(m){const e=t(!1);return s(()=>{e.value=!0}),(_,l)=>e.value?(a(),n("div",c," User ")):r("",!0)}});export{d as default};

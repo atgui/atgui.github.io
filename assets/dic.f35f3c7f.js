@@ -1,1 +1,0 @@
-import{d as o,r as t,o as a,a as s,e as n,j as r}from"./index.db43cd72.js";const c={key:0,class:"commonCls"},d=o({__name:"dic",setup(u){const e=t(!1);return a(()=>{e.value=!0}),(m,_)=>e.value?(s(),n("div",c," \u5B57\u5178\u7BA1\u7406 ")):r("",!0)}});export{d as default};
