@@ -1,1 +1,0 @@
-import{d as t,r as o,o as a,a as n,e as s,j as r}from"./index.b0cd5e5f.js";const c={key:0,class:"commonCls"},u=t({__name:"gather_setting",setup(_){const e=o(!1);return a(()=>{e.value=!0}),(m,i)=>e.value?(n(),s("div",c," Gather Setting ")):r("",!0)}});export{u as default};
