@@ -1,1 +1,0 @@
-import{d as o,r as t,o as a,a as n,e as s,j as r}from"./index.dcb32dfd.js";const c={key:0,class:"commonCls"},d=o({__name:"index",setup(u){const e=t(!1);return a(()=>{e.value=!0}),(m,_)=>e.value?(n(),s("div",c," \u7CFB\u7EDF\u7BA1\u7406 ")):r("",!0)}});export{d as default};
