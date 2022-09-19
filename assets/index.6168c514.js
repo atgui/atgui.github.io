@@ -1,0 +1,1 @@
+import{d as t,r as o,o as n,a,c as s,w as r,T as c,e as i,j as m}from"./index.dcb32dfd.js";const d={key:0,class:"commonCls"},p=t({__name:"index",setup(l){const e=o(!1);return n(()=>{e.value=!0}),(u,_)=>(a(),s(c,{name:"fade",mode:"out-in"},{default:r(()=>[e.value?(a(),i("div",d," Server ")):m("",!0)]),_:1}))}});export{p as default};
