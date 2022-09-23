@@ -1,0 +1,1 @@
+import{d as a,r as o,o as s,a as t,c as n,w as r,T as c,e as u,j as i}from"./index.fd6482f9.js";const m={key:0,class:"commonCls"},p=a({__name:"user_setting",setup(_){const e=o(!1);return s(()=>{e.value=!0}),(l,d)=>(t(),n(c,{name:"fade",mode:"out-in"},{default:r(()=>[e.value?(t(),u("div",m," \u4E2A\u4EBA\u8BBE\u7F6E ")):i("",!0)]),_:1}))}});export{p as default};
